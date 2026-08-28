@@ -1,0 +1,747 @@
+{
+  "config": {
+    "files": [
+      "Tuesday-WorkingHours.pcap_ISCX.csv",
+      "Wednesday-workingHours.pcap_ISCX.csv",
+      "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv"
+    ],
+    "split": "per-file row-order 60/20/20",
+    "W": {
+      "I": 0.1,
+      "B": 0.15,
+      "D": 0.1,
+      "C": 0.1,
+      "H": 0.1
+    },
+    "wR": 0.45,
+    "aar_max": [
+      0.01,
+      0.007,
+      0.005,
+      0.003
+    ],
+    "bdr_max": [
+      0.02,
+      0.04,
+      0.08,
+      0.15
+    ],
+    "band_floor": 0.2,
+    "band_floor_max_frac": 0.5,
+    "fix_12h_clock": true,
+    "val_additive_roc": 0.9991,
+    "R_test_roc": 0.9965,
+    "subfactor_map": {
+      "I": [],
+      "B": [
+        "sf_access_rate",
+        "sf_service_usage"
+      ],
+      "D": [
+        "sf_dev_initwin",
+        "sf_dev_minseg",
+        "sf_dev_downup"
+      ],
+      "C": [
+        "sf_dest_context",
+        "sf_access_time"
+      ]
+    },
+    "subfactor_map_effective": {
+      "B": [
+        "sf_access_rate",
+        "sf_service_usage"
+      ],
+      "D": [
+        "sf_dev_initwin",
+        "sf_dev_minseg",
+        "sf_dev_downup"
+      ],
+      "C": [
+        "sf_dest_context",
+        "sf_access_time"
+      ]
+    },
+    "subfactor_auc": {
+      "sf_access_rate": 0.937,
+      "sf_service_usage": 0.427,
+      "sf_dev_initwin": 0.679,
+      "sf_dev_minseg": 0.844,
+      "sf_dev_downup": 0.15,
+      "sf_dest_context": 0.868,
+      "sf_access_time": 0.48
+    },
+    "h_mode": "legacy_ema",
+    "gate_mode": "report",
+    "iqr_floor": 0.01,
+    "stability_max": 0.1,
+    "subfactor_admission": {
+      "sf_access_rate": {
+        "iqr": 0.8097,
+        "stability_delta": 0.0539,
+        "gate_verdict": true,
+        "admitted": true
+      },
+      "sf_service_usage": {
+        "iqr": 0.8147,
+        "stability_delta": 0.1923,
+        "gate_verdict": false,
+        "admitted": true
+      },
+      "sf_dev_initwin": {
+        "iqr": 0.4482,
+        "stability_delta": 0.0469,
+        "gate_verdict": true,
+        "admitted": true
+      },
+      "sf_dev_minseg": {
+        "iqr": 0.0171,
+        "stability_delta": 0.0023,
+        "gate_verdict": true,
+        "admitted": true
+      },
+      "sf_dev_downup": {
+        "iqr": 1.0,
+        "stability_delta": 0.2166,
+        "gate_verdict": false,
+        "admitted": true
+      },
+      "sf_dest_context": {
+        "iqr": 0.0539,
+        "stability_delta": 0.1333,
+        "gate_verdict": false,
+        "admitted": true
+      },
+      "sf_access_time": {
+        "iqr": 0.0103,
+        "stability_delta": 0.0337,
+        "gate_verdict": true,
+        "admitted": true
+      }
+    },
+    "calib_topk": [
+      {
+        "val_roc": 0.99906121,
+        "W": {
+          "I": 0.1,
+          "B": 0.15,
+          "D": 0.1,
+          "C": 0.1,
+          "H": 0.1
+        },
+        "wR": 0.45,
+        "gap_to_best": 0.0
+      },
+      {
+        "val_roc": 0.99905623,
+        "W": {
+          "I": 0.1,
+          "B": 0.2,
+          "D": 0.1,
+          "C": 0.1,
+          "H": 0.1
+        },
+        "wR": 0.4,
+        "gap_to_best": 4.9777e-06
+      },
+      {
+        "val_roc": 0.99904143,
+        "W": {
+          "I": 0.15,
+          "B": 0.15,
+          "D": 0.1,
+          "C": 0.1,
+          "H": 0.1
+        },
+        "wR": 0.4,
+        "gap_to_best": 1.97778e-05
+      },
+      {
+        "val_roc": 0.99903858,
+        "W": {
+          "I": 0.1,
+          "B": 0.15,
+          "D": 0.1,
+          "C": 0.1,
+          "H": 0.15
+        },
+        "wR": 0.4,
+        "gap_to_best": 2.26286e-05
+      },
+      {
+        "val_roc": 0.99902484,
+        "W": {
+          "I": 0.15,
+          "B": 0.2,
+          "D": 0.1,
+          "C": 0.1,
+          "H": 0.1
+        },
+        "wR": 0.35,
+        "gap_to_best": 3.63687e-05
+      },
+      {
+        "val_roc": 0.99901962,
+        "W": {
+          "I": 0.1,
+          "B": 0.2,
+          "D": 0.1,
+          "C": 0.1,
+          "H": 0.15
+        },
+        "wR": 0.35,
+        "gap_to_best": 4.15932e-05
+      },
+      {
+        "val_roc": 0.99901604,
+        "W": {
+          "I": 0.1,
+          "B": 0.15,
+          "D": 0.1,
+          "C": 0.1,
+          "H": 0.2
+        },
+        "wR": 0.35,
+        "gap_to_best": 4.51668e-05
+      },
+      {
+        "val_roc": 0.99901578,
+        "W": {
+          "I": 0.15,
+          "B": 0.15,
+          "D": 0.1,
+          "C": 0.1,
+          "H": 0.15
+        },
+        "wR": 0.35,
+        "gap_to_best": 4.54279e-05
+      }
+    ],
+    "calib_runner_up_gap": 4.9777e-06,
+    "factor_auc": {
+      "I": 0.5,
+      "B": 0.8871,
+      "D": 0.7884,
+      "C": 0.8103,
+      "H": 0.969
+    },
+    "n_test": 285017,
+    "n_test_attack": 30457,
+    "n_test_benign": 254560
+  },
+  "results": {
+    "global": {
+      "ADR": 0.8829,
+      "UAR": 0.9999,
+      "precision": 0.9993,
+      "recall": 0.8829,
+      "F1": 0.9375,
+      "accuracy": 0.9874,
+      "roc": 0.9972,
+      "BAR_restrict": 0.0,
+      "BAR_deny": 0.0001,
+      "attack_deny_rate": 0.8829,
+      "confusion": {
+        "TP": 26892,
+        "FP": 20,
+        "FN": 3565,
+        "TN": 254540,
+        "n": 285017,
+        "n_attack": 30457,
+        "n_benign": 254560
+      },
+      "FN": 3565,
+      "n_attack": 30457,
+      "decision_distribution": {
+        "benign": {
+          "n": 254560,
+          "allow": 254540,
+          "restrict": 0,
+          "deny": 20,
+          "allow_rate": 0.9999,
+          "restrict_rate": 0.0,
+          "deny_rate": 0.0001
+        },
+        "attack": {
+          "n": 30457,
+          "allow": 3565,
+          "restrict": 0,
+          "deny": 26892,
+          "allow_rate": 0.1171,
+          "restrict_rate": 0.0,
+          "deny_rate": 0.8829
+        },
+        "attack_lowconf": {
+          "n": 2460,
+          "allow": 2350,
+          "restrict": 0,
+          "deny": 110,
+          "allow_rate": 0.9553,
+          "restrict_rate": 0.0,
+          "deny_rate": 0.0447
+        },
+        "attack_highconf": {
+          "n": 27997,
+          "allow": 1215,
+          "restrict": 0,
+          "deny": 26782,
+          "allow_rate": 0.0434,
+          "restrict_rate": 0.0,
+          "deny_rate": 0.9566
+        }
+      },
+      "ladder": {
+        "1": [
+          0.217,
+          0.217,
+          0.0
+        ],
+        "2": [
+          0.217,
+          0.217,
+          0.0
+        ],
+        "3": [
+          0.217,
+          0.217,
+          0.0
+        ],
+        "4": [
+          0.217,
+          0.217,
+          0.0
+        ]
+      },
+      "ladder_raw": {
+        "1": [
+          0.2172,
+          0.2172
+        ],
+        "2": [
+          0.2172,
+          0.2172
+        ],
+        "3": [
+          0.2172,
+          0.2172
+        ],
+        "4": [
+          0.2172,
+          0.2172
+        ]
+      },
+      "tier_breakdown": {
+        "1": {
+          "n": 236838,
+          "n_benign": 215996,
+          "n_attack": 20842,
+          "benign": {
+            "n": 215996,
+            "allow": 1.0,
+            "restrict": 0.0,
+            "deny": 0.0
+          },
+          "attack": {
+            "n": 20842,
+            "allow": 0.0008,
+            "restrict": 0.0,
+            "deny": 0.9992
+          }
+        },
+        "2": {
+          "n": 42283,
+          "n_benign": 34790,
+          "n_attack": 7493,
+          "benign": {
+            "n": 34790,
+            "allow": 0.9997,
+            "restrict": 0.0,
+            "deny": 0.0003
+          },
+          "attack": {
+            "n": 7493,
+            "allow": 0.3104,
+            "restrict": 0.0,
+            "deny": 0.6896
+          }
+        },
+        "3": {
+          "n": 2623,
+          "n_benign": 904,
+          "n_attack": 1719,
+          "benign": {
+            "n": 904,
+            "allow": 1.0,
+            "restrict": 0.0,
+            "deny": 0.0
+          },
+          "attack": {
+            "n": 1719,
+            "allow": 0.6771,
+            "restrict": 0.0,
+            "deny": 0.3229
+          }
+        },
+        "4": {
+          "n": 3273,
+          "n_benign": 2870,
+          "n_attack": 403,
+          "benign": {
+            "n": 2870,
+            "allow": 1.0,
+            "restrict": 0.0,
+            "deny": 0.0
+          },
+          "attack": {
+            "n": 403,
+            "allow": 0.1439,
+            "restrict": 0.0,
+            "deny": 0.8561
+          }
+        }
+      }
+    },
+    "monotonic": {
+      "ADR": 0.9741,
+      "UAR": 0.9978,
+      "precision": 0.9814,
+      "recall": 0.9741,
+      "F1": 0.9777,
+      "accuracy": 0.9953,
+      "roc": 0.9972,
+      "BAR_restrict": 0.0011,
+      "BAR_deny": 0.0011,
+      "attack_deny_rate": 0.8685,
+      "confusion": {
+        "TP": 29667,
+        "FP": 562,
+        "FN": 790,
+        "TN": 253998,
+        "n": 285017,
+        "n_attack": 30457,
+        "n_benign": 254560
+      },
+      "FN": 790,
+      "n_attack": 30457,
+      "decision_distribution": {
+        "benign": {
+          "n": 254560,
+          "allow": 253998,
+          "restrict": 284,
+          "deny": 278,
+          "allow_rate": 0.9978,
+          "restrict_rate": 0.0011,
+          "deny_rate": 0.0011
+        },
+        "attack": {
+          "n": 30457,
+          "allow": 790,
+          "restrict": 3216,
+          "deny": 26451,
+          "allow_rate": 0.0259,
+          "restrict_rate": 0.1056,
+          "deny_rate": 0.8685
+        },
+        "attack_lowconf": {
+          "n": 2460,
+          "allow": 680,
+          "restrict": 1638,
+          "deny": 142,
+          "allow_rate": 0.2764,
+          "restrict_rate": 0.6659,
+          "deny_rate": 0.0577
+        },
+        "attack_highconf": {
+          "n": 27997,
+          "allow": 110,
+          "restrict": 1578,
+          "deny": 26309,
+          "allow_rate": 0.0039,
+          "restrict_rate": 0.0564,
+          "deny_rate": 0.9397
+        }
+      },
+      "ladder": {
+        "1": [
+          0.029,
+          0.015,
+          0.015
+        ],
+        "2": [
+          0.684,
+          0.484,
+          0.2
+        ],
+        "3": [
+          0.684,
+          0.484,
+          0.2
+        ],
+        "4": [
+          0.684,
+          0.484,
+          0.2
+        ]
+      },
+      "ladder_raw": {
+        "1": [
+          0.0294,
+          0.6667
+        ],
+        "2": [
+          0.6839,
+          0.7933
+        ],
+        "3": [
+          0.5133,
+          0.7895
+        ],
+        "4": [
+          0.0871,
+          0.8457
+        ]
+      },
+      "tier_breakdown": {
+        "1": {
+          "n": 236838,
+          "n_benign": 215996,
+          "n_attack": 20842,
+          "benign": {
+            "n": 215996,
+            "allow": 1.0,
+            "restrict": 0.0,
+            "deny": 0.0
+          },
+          "attack": {
+            "n": 20842,
+            "allow": 0.0061,
+            "restrict": 0.0722,
+            "deny": 0.9217
+          }
+        },
+        "2": {
+          "n": 42283,
+          "n_benign": 34790,
+          "n_attack": 7493,
+          "benign": {
+            "n": 34790,
+            "allow": 0.9845,
+            "restrict": 0.0076,
+            "deny": 0.0079
+          },
+          "attack": {
+            "n": 7493,
+            "allow": 0.0814,
+            "restrict": 0.2185,
+            "deny": 0.7001
+          }
+        },
+        "3": {
+          "n": 2623,
+          "n_benign": 904,
+          "n_attack": 1719,
+          "benign": {
+            "n": 904,
+            "allow": 0.9934,
+            "restrict": 0.0066,
+            "deny": 0.0
+          },
+          "attack": {
+            "n": 1719,
+            "allow": 0.0093,
+            "restrict": 0.0436,
+            "deny": 0.9471
+          }
+        },
+        "4": {
+          "n": 3273,
+          "n_benign": 2870,
+          "n_attack": 403,
+          "benign": {
+            "n": 2870,
+            "allow": 0.9948,
+            "restrict": 0.0045,
+            "deny": 0.0007
+          },
+          "attack": {
+            "n": 403,
+            "allow": 0.0918,
+            "restrict": 0.0,
+            "deny": 0.9082
+          }
+        }
+      }
+    },
+    "independent": {
+      "ADR": 0.9709,
+      "UAR": 0.9979,
+      "precision": 0.982,
+      "recall": 0.9709,
+      "F1": 0.9765,
+      "accuracy": 0.995,
+      "roc": 0.9972,
+      "BAR_restrict": 0.001,
+      "BAR_deny": 0.0011,
+      "attack_deny_rate": 0.8664,
+      "confusion": {
+        "TP": 29572,
+        "FP": 541,
+        "FN": 885,
+        "TN": 254019,
+        "n": 285017,
+        "n_attack": 30457,
+        "n_benign": 254560
+      },
+      "FN": 885,
+      "n_attack": 30457,
+      "decision_distribution": {
+        "benign": {
+          "n": 254560,
+          "allow": 254019,
+          "restrict": 265,
+          "deny": 276,
+          "allow_rate": 0.9979,
+          "restrict_rate": 0.001,
+          "deny_rate": 0.0011
+        },
+        "attack": {
+          "n": 30457,
+          "allow": 885,
+          "restrict": 3185,
+          "deny": 26387,
+          "allow_rate": 0.0291,
+          "restrict_rate": 0.1046,
+          "deny_rate": 0.8664
+        },
+        "attack_lowconf": {
+          "n": 2460,
+          "allow": 700,
+          "restrict": 1637,
+          "deny": 123,
+          "allow_rate": 0.2846,
+          "restrict_rate": 0.6654,
+          "deny_rate": 0.05
+        },
+        "attack_highconf": {
+          "n": 27997,
+          "allow": 185,
+          "restrict": 1548,
+          "deny": 26264,
+          "allow_rate": 0.0066,
+          "restrict_rate": 0.0553,
+          "deny_rate": 0.9381
+        }
+      },
+      "ladder": {
+        "1": [
+          0.029,
+          0.015,
+          0.015
+        ],
+        "2": [
+          0.684,
+          0.484,
+          0.2
+        ],
+        "3": [
+          0.513,
+          0.313,
+          0.2
+        ],
+        "4": [
+          0.087,
+          0.044,
+          0.044
+        ]
+      },
+      "ladder_raw": {
+        "1": [
+          0.0294,
+          0.6667
+        ],
+        "2": [
+          0.6839,
+          0.7933
+        ],
+        "3": [
+          0.5133,
+          0.7895
+        ],
+        "4": [
+          0.0871,
+          0.8457
+        ]
+      },
+      "tier_breakdown": {
+        "1": {
+          "n": 236838,
+          "n_benign": 215996,
+          "n_attack": 20842,
+          "benign": {
+            "n": 215996,
+            "allow": 1.0,
+            "restrict": 0.0,
+            "deny": 0.0
+          },
+          "attack": {
+            "n": 20842,
+            "allow": 0.0061,
+            "restrict": 0.0722,
+            "deny": 0.9217
+          }
+        },
+        "2": {
+          "n": 42283,
+          "n_benign": 34790,
+          "n_attack": 7493,
+          "benign": {
+            "n": 34790,
+            "allow": 0.9845,
+            "restrict": 0.0076,
+            "deny": 0.0079
+          },
+          "attack": {
+            "n": 7493,
+            "allow": 0.0814,
+            "restrict": 0.2185,
+            "deny": 0.7001
+          }
+        },
+        "3": {
+          "n": 2623,
+          "n_benign": 904,
+          "n_attack": 1719,
+          "benign": {
+            "n": 904,
+            "allow": 1.0,
+            "restrict": 0.0,
+            "deny": 0.0
+          },
+          "attack": {
+            "n": 1719,
+            "allow": 0.0518,
+            "restrict": 0.0017,
+            "deny": 0.9465
+          }
+        },
+        "4": {
+          "n": 3273,
+          "n_benign": 2870,
+          "n_attack": 403,
+          "benign": {
+            "n": 2870,
+            "allow": 1.0,
+            "restrict": 0.0,
+            "deny": 0.0
+          },
+          "attack": {
+            "n": 403,
+            "allow": 0.1464,
+            "restrict": 0.1017,
+            "deny": 0.7519
+          }
+        }
+      }
+    }
+  }
+}

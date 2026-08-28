@@ -1,0 +1,25 @@
+{
+  "bundle": "ICECE2026_CICIDS_CONF_VM",
+  "built": "2026-08-27",
+  "source": "C:\\Users\\RafieaNusratMim\\Desktop\\Thesis_May\\ICECE2026_CONFERENCE_PAPER\\pipeline_cicids",
+  "anchor_arm": "--day Wednesday --drop-identity --policy-score formula --aar-global 0.01 --bdr-global 0.005 --gate-mode enforce",
+  "anchor_sha256_recorded_not_independently_reproduced": "5e755952ffcbbaf4e079da01e7649d165c6278940927ba5f9da59008f27cd303",
+  "edited_files": "NONE -- every copied file is byte-identical to pipeline_cicids/. verify_conference.py and RUNBOOK.md are new, not edits.",
+  "files": {
+    "_REFERENCE/metrics_cicids_locked_20260821_legacyema.json": "cdf025db61cb083c186ea402b864610f1795647e38942753b7532fcf49031c04",
+    "_REFERENCE/metrics_wed_gateenf_CONFERENCE_ANCHOR.json": "5e755952ffcbbaf4e079da01e7649d165c6278940927ba5f9da59008f27cd303",
+    "_REFERENCE/model_external_ids.json": "700d74a9830bfb004ced7e1cfc980845cca756927812d5edbbe654ce51373ab1",
+    "_REFERENCE/model_external_ids_meta.json": "57e63a50628a25ddfd02cf2707e2119cca1ceeb19950fc01a9fcd167bea6f1a3",
+    "configs/port_to_tier.json": "640a0ea2377513564a10756442b0664f54cae1f5fab02a7bdd491cce6c02a0e4",
+    "dataset/PUT_RAW_CSVS_HERE.txt": "64aa7d16a43fb46669ad9044bdf98f124d5f9ac157f8b580cbb9fb7240b350da",
+    "pdp_core.py": "0acd4d91c96d0eac6316b10a6ec3d926e6da24d790da20315c270736bee7f77e",
+    "policy_calib.py": "d3dc86808241d40d6e36294a642037add2a24ca5bde78c2b4a93a7c353d49388",
+    "requirements.txt": "f38576b852290d4bff10da7d0fda20949df53c39bbfe86a1925794c2c29d54bf",
+    "run_pipeline.py": "4e3cbadefc0a1e57223ebaacf57299df1b421a208a3b03e811bcc2677015858b",
+    "RUNBOOK.md": "2d7009c8cb32b72e09b52a966d33e23077ed6ebb3342809a23dc226518ee5ef0",
+    "selftest_conference_cicids.py": "517e76b5706d6c74806a9b88b7afd0d4471380356932c9ea6d8a35c70409d7fc",
+    "trajectory_kernel.py": "f7d9787038495f0dd5acb0d7f25dfb379a78f6b622c79f4283f40ae034181904",
+    "verify.py": "175bb841e3b46a62c429e5cc0abc9aea6ceabec9f8f6b7e2ff58d72857cb8c99",
+    "verify_conference.py": "e704703e899d446c990cb3cd89791e0fa9b5ed4659b1033fa3da8121e4fc4c54"
+  }
+}

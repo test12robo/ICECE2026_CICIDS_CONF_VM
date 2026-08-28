@@ -1,0 +1,109 @@
+{
+  "leg": "CICIDS",
+  "gate_mode": "enforce",
+  "iqr_floor": 0.01,
+  "stability_max": 0.1,
+  "subfactor_map": {
+    "I": [],
+    "B": [
+      "sf_access_rate",
+      "sf_service_usage"
+    ],
+    "D": [
+      "sf_dev_initwin",
+      "sf_dev_minseg",
+      "sf_dev_downup"
+    ],
+    "C": [
+      "sf_dest_context",
+      "sf_access_time"
+    ]
+  },
+  "note": "iqr on train; stability = |mean_train - mean_val|; test_auc_trust is a DIAGNOSTIC and deliberately NOT a gate criterion (that would be test-set selection). Direction is not gated -- see the BACKWARDS note.",
+  "subfactors": {
+    "sf_access_rate": {
+      "slot": "B",
+      "iqr": 0.6863,
+      "stability_delta": 0.0974,
+      "test_auc_trust": 0.9635,
+      "test_auc_trust_raw": 0.9635413494915048,
+      "iqr_ok": true,
+      "stable": true,
+      "gate_verdict": true,
+      "gate_mode": "enforce",
+      "admitted": true
+    },
+    "sf_service_usage": {
+      "slot": "B",
+      "iqr": 0.8906,
+      "stability_delta": 0.3239,
+      "test_auc_trust": 0.9914,
+      "test_auc_trust_raw": 0.991436683978217,
+      "iqr_ok": true,
+      "stable": false,
+      "gate_verdict": false,
+      "gate_mode": "enforce",
+      "admitted": false
+    },
+    "sf_dev_initwin": {
+      "slot": "D",
+      "iqr": 0.4678,
+      "stability_delta": 0.0765,
+      "test_auc_trust": 0.6898,
+      "test_auc_trust_raw": 0.6897663949509963,
+      "iqr_ok": true,
+      "stable": true,
+      "gate_verdict": true,
+      "gate_mode": "enforce",
+      "admitted": true
+    },
+    "sf_dev_minseg": {
+      "slot": "D",
+      "iqr": 0.0051,
+      "stability_delta": 0.0017,
+      "test_auc_trust": 0.7076,
+      "test_auc_trust_raw": 0.7076000243590524,
+      "iqr_ok": false,
+      "stable": true,
+      "gate_verdict": false,
+      "gate_mode": "enforce",
+      "admitted": false
+    },
+    "sf_dev_downup": {
+      "slot": "D",
+      "iqr": 1.0,
+      "stability_delta": 0.1878,
+      "test_auc_trust": 0.1065,
+      "test_auc_trust_raw": 0.10651235089790641,
+      "iqr_ok": true,
+      "stable": false,
+      "gate_verdict": false,
+      "gate_mode": "enforce",
+      "admitted": false
+    },
+    "sf_dest_context": {
+      "slot": "C",
+      "iqr": 0.0578,
+      "stability_delta": 0.0694,
+      "test_auc_trust": 0.7272,
+      "test_auc_trust_raw": 0.727178314546291,
+      "iqr_ok": true,
+      "stable": true,
+      "gate_verdict": true,
+      "gate_mode": "enforce",
+      "admitted": true
+    },
+    "sf_access_time": {
+      "slot": "C",
+      "iqr": 0.0392,
+      "stability_delta": 0.5519,
+      "test_auc_trust": 0.3017,
+      "test_auc_trust_raw": 0.3016651309180635,
+      "iqr_ok": true,
+      "stable": false,
+      "gate_verdict": false,
+      "gate_mode": "enforce",
+      "admitted": false
+    }
+  }
+}

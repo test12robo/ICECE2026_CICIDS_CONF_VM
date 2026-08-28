@@ -1,0 +1,75 @@
+# =============================================================================
+# FSL-PDP thesis pipeline — pinned requirements
+# Generated 2026-08-10 from the machine that produced the locked UNSW `g2` result.
+#
+# Python 3.13.7   (numba 0.65.1 is the constraint — check numba's support matrix
+#                  before moving to a newer Python)
+#
+# WHY EXACT PINS: the locked results reproduce BIT-FOR-BIT on this environment
+# (verified 2026-08-06 field-by-field, and again 2026-08-10 via the regression
+# gate: 0 differences across 196 metric fields). Two known behaviours depend on
+# library version:
+#   * polars `sort` defaults to maintain_order=False. `universal_subfactors_unsw.py`
+#     sorts on 2 keys where Phase 7 sorts on 3, and UNSW has 75.3% same-second
+#     ties, so ~24% of rows per partition depend on the sort's tie handling.
+#     Pinning polars is what makes that deterministic. (See GAP_REGISTER_20260810.md N3.)
+#   * XGBoost histogram binning and thread scheduling affect f_theta at the
+#     last decimal.
+#
+# DO NOT use `UNSW_VM_BUNDLE/_ENV/pip_freeze_20260624_132005.txt` as the source of
+# truth. That freeze is from the LANL VM (its timestamp matches the LANL code
+# backup folder), and it differs from this machine in 25 packages — including
+# polars 1.41.2 vs 1.40.1 and numpy 2.4.4 vs 2.4.3. The locked UNSW numbers were
+# produced HERE, so these pins are the reproducible ones.
+#
+# Install:
+#     python -m venv .venv
+#     .venv\Scripts\activate            # Windows
+#     python -m pip install --upgrade pip
+#     python -m pip install -r requirements.txt
+#
+# Full byte-exact environment (152 packages, incl. dev/notebook tooling):
+#     analysis_20260810/pip_freeze_LAPTOP_20260810.txt
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# CORE — required by every leg (UNSW, CICIDS, LANL)
+# -----------------------------------------------------------------------------
+polars==1.40.1
+polars-runtime-32==1.40.1     # companion runtime split out in this polars release
+numpy==2.4.3
+numba==0.65.1                 # Phase 7 sequential trust-trajectory kernel (@njit)
+llvmlite==0.47.0              # numba backend — pin together with numba
+xgboost==3.2.0                # external IDS R + the monotone f_theta student
+scikit-learn==1.8.0           # roc_auc_score, IsolationForest (unsupervised R arm)
+scipy==1.17.1                 # sklearn dependency; also scipy.stats.spearmanr in the
+                              # CICIDS high-recall harness
+joblib==1.5.3                 # sklearn dependency
+threadpoolctl==3.6.0          # sklearn dependency — also caps BLAS threads
+
+# -----------------------------------------------------------------------------
+# LANL LEG — its phase 0-2 use the pandas/pyarrow path rather than polars
+#   preprocessing/lanl/phase0_inspect_lanl.py, phase1_filter_to_window.py,
+#   phase2_clean.py, lanl_workspace/check_test_parquet.py
+# Not imported anywhere on the UNSW run path — omit if you only run UNSW.
+# -----------------------------------------------------------------------------
+pandas==3.0.1
+pyarrow==24.0.0
+
+# -----------------------------------------------------------------------------
+# OPTIONAL — figures, notebooks, diagram rendering. NOT needed to reproduce any
+# locked metric. Omit for a minimal VM run.
+#   preprocessing/make_thesis_plots.py
+#   preprocessing/formula_supervised_pdp/render_architecture.py
+#   preprocessing/*/build_*_notebook.py
+# -----------------------------------------------------------------------------
+matplotlib==3.10.8
+tqdm==4.67.1
+
+# -----------------------------------------------------------------------------
+# NOT REQUIRED — deliberately excluded
+#   torch / tensorflow / lightgbm / catboost : no deep-learning or alt-GBM path
+#   seaborn / networkx / statsmodels         : not imported anywhere in the pipeline
+#   jupyter / nbformat                       : only the notebook BUILDER scripts
+#                                              emit .ipynb; they do not execute it
+# -----------------------------------------------------------------------------
